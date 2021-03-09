@@ -15,6 +15,9 @@ namespace Centipede.Content.GameStates
         GameObjectList snake;
         int snakeSegments = 10;
         int snakeSpacing = 32;
+        GameObjectList mushrooms;
+        int[] randomMushroom = { 20, 450, 25, 450 };
+        int mushroomAmount = 20;
         public PlayingState()
         {
             Add(new SpriteGameObject("spr_background"));
@@ -29,13 +32,22 @@ namespace Centipede.Content.GameStates
                 snake.Add(new SnakeSegment("spr_snakebody", new Vector2(i * snakeSpacing, 0)));
             }
             snake.Add(new SnakeSegment("spr_snakehead", new Vector2(snakeSpacing * snakeSegments - snakeSpacing, 0)));
+            mushrooms = new GameObjectList();
+            Add(mushrooms);
+            for (int i = 0; i < mushroomAmount; i++)
+            {
+                Random r = new Random();
+                int x = r.Next(randomMushroom[0], randomMushroom[1]);
+                int y = r.Next(randomMushroom[2], randomMushroom[3]);
+                mushrooms.Add(new Mushroom(new Vector2(x, y)));
+            }
         }
 
         public override void HandleInput(InputHelper inputHelper)
         {
-            if(inputHelper.KeyPressed(Keys.Space))
+            if (inputHelper.KeyPressed(Keys.Space))
             {
-                bullets.Add(new Bullet(new Vector2(player.Position.X , player.Position.Y - spacingBulletPlayer)));
+                bullets.Add(new Bullet(new Vector2(player.Position.X, player.Position.Y - spacingBulletPlayer)));
             }
             base.HandleInput(inputHelper);
         }

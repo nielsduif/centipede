@@ -17,7 +17,7 @@ namespace Centipede.GameObjects
 
         public override void Update(GameTime gameTime)
         {
-            if(position.X < 0 || position.X - sprite.Width > GameEnvironment.Screen.X)
+            if(position.X < 0 - sprite.Width || position.X - sprite.Width > GameEnvironment.Screen.X)
             {
                 Bounce();
             }
