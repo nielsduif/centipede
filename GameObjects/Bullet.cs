@@ -7,11 +7,11 @@ namespace Centipede.GameObjects
 {
     class Bullet : SpriteGameObject
     {
-        int startspeed = -200;
-        public Bullet(Vector2 _startpos) : base("spr_bullet")
+        int startSpeed = -200;
+        public Bullet(Vector2 _startPos) : base("spr_bullet")
         {
-            position = _startpos;
-            velocity.Y = startspeed;
+            position = _startPos;
+            velocity.Y = startSpeed;
             Origin = sprite.Center;
         }
     }
