@@ -23,7 +23,7 @@ namespace Centipede.GameObjects
             }
             base.Update(gameTime);
         }
-        void Bounce()
+        public void Bounce()
         {
             velocity.X *= -1;
             position.Y += shiftAmount;

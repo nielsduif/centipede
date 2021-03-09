@@ -18,6 +18,8 @@ namespace Centipede.Content.GameStates
         GameObjectList mushrooms;
         int[] randomMushroom = { 20, 450, 25, 450 };
         int mushroomAmount = 20;
+        Score score;
+        int scoreSnakeHit = 10, scoreMushroomHit = 1;
         public PlayingState()
         {
             Add(new SpriteGameObject("spr_background"));
@@ -41,6 +43,55 @@ namespace Centipede.Content.GameStates
                 int y = r.Next(randomMushroom[2], randomMushroom[3]);
                 mushrooms.Add(new Mushroom(new Vector2(x, y)));
             }
+            score = new Score();
+            Add(score);
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            foreach (SnakeSegment snakeSegment in snake.Children)
+            {
+                foreach (Mushroom mushroom in mushrooms.Children)
+                {
+                    if (snakeSegment.CollidesWith(mushroom))
+                    {
+                        snakeSegment.Bounce();
+                    }
+                }
+
+                if (snakeSegment.CollidesWith(player))
+                {
+                    GameEnvironment.GameStateManager.SwitchTo("gameOverState");
+                }
+            }
+
+            foreach (Bullet bullet in bullets.Children)
+            {
+                foreach (SnakeSegment snakeSegment in snake.Children)
+                {
+                    if (snakeSegment.CollidesWith(bullet))
+                    {
+                        score.Add(scoreSnakeHit);
+                        mushrooms.Add(new Mushroom(snakeSegment.Position));
+                        //snake.Remove(snakeSegment);
+                        //bullets.Remove(bullet);
+                    }
+                }
+            }
+
+            foreach (Bullet bullet in bullets.Children)
+            {
+                foreach (Mushroom mushroom in mushrooms.Children)
+                {
+                    if (bullet.CollidesWith(mushroom))
+                    {
+                        score.Add(scoreMushroomHit);
+                        //mushrooms.Remove(mushroom);
+                        //bullets.Remove(bullet);
+                    }
+                }
+            }
+            base.Update(gameTime);
         }
 
         public override void HandleInput(InputHelper inputHelper)
