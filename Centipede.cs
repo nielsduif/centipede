@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Centipede.Content.GameStates;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -21,7 +22,9 @@ namespace Centipede
             ApplyResolutionSettings();
 
             // TODO: use this.Content to load your game content here
+            gameStateManager.AddGameState("playingState", new PlayingState());
+            gameStateManager.SwitchTo("playingState");
+
         }
-        
     }
 }
