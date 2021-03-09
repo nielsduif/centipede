@@ -11,7 +11,7 @@ namespace Centipede.GameObjects
         public Player() : base("spr_player")
         {
             Mouse.SetPosition(235, 500);
-            Origin = new Vector2(sprite.Width * .5f, sprite.Height * .5f);
+            Origin = sprite.Center;
         }
 
         public override void HandleInput(InputHelper inputHelper)
