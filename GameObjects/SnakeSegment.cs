@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Centipede.GameObjects
@@ -17,16 +18,17 @@ namespace Centipede.GameObjects
 
         public override void Update(GameTime gameTime)
         {
-            if(position.X < 0 - sprite.Width || position.X - sprite.Width > GameEnvironment.Screen.X)
+            if (position.X < 0 - sprite.Width || position.X > GameEnvironment.Screen.X)
             {
                 Bounce();
             }
-            base.Update(gameTime);
+            position.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
+
         public void Bounce()
         {
-            velocity.X *= -1;
             position.Y += shiftAmount;
+            velocity.X *= -1;
         }
     }
 }

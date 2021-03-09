@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Centipede.Content.GameStates
@@ -20,6 +21,7 @@ namespace Centipede.Content.GameStates
         int mushroomAmount = 20;
         Score score;
         int scoreSnakeHit = 10, scoreMushroomHit = 1;
+
         public PlayingState()
         {
             Add(new SpriteGameObject("spr_background"));
@@ -49,45 +51,49 @@ namespace Centipede.Content.GameStates
 
         public override void Update(GameTime gameTime)
         {
-            foreach (SnakeSegment snakeSegment in snake.Children)
+            bool _gameOver = false;
+            for (int i = snake.Children.Count - 1; i >= 0; i--)
             {
-                foreach (Mushroom mushroom in mushrooms.Children)
+                SnakeSegment s = snake.Children[i] as SnakeSegment;
+                for (int x = bullets.Children.Count - 1; x >= 0; x--)
                 {
-                    if (snakeSegment.CollidesWith(mushroom))
-                    {
-                        snakeSegment.Bounce();
-                    }
-                }
-
-                if (snakeSegment.CollidesWith(player))
-                {
-                    GameEnvironment.GameStateManager.SwitchTo("gameOverState");
-                }
-            }
-
-            foreach (Bullet bullet in bullets.Children)
-            {
-                foreach (SnakeSegment snakeSegment in snake.Children)
-                {
-                    if (snakeSegment.CollidesWith(bullet))
+                    Bullet b = bullets.Children[x] as Bullet;
+                    if (s.CollidesWith(b))
                     {
                         score.Add(scoreSnakeHit);
-                        mushrooms.Add(new Mushroom(snakeSegment.Position));
-                        //snake.Remove(snakeSegment);
-                        //bullets.Remove(bullet);
+                        mushrooms.Add(new Mushroom(s.Position));
+                        bullets.Remove(b);
+                        snake.Remove(s);
                     }
                 }
-            }
-
-            foreach (Bullet bullet in bullets.Children)
-            {
-                foreach (Mushroom mushroom in mushrooms.Children)
+                for (int x = mushrooms.Children.Count - 1; x >= 0; x--)
                 {
-                    if (bullet.CollidesWith(mushroom))
+                    Mushroom m = mushrooms.Children[x] as Mushroom;
+                    if (s.CollidesWith(m))
+                    {
+                        s.Bounce();
+                    }
+                }
+                if (s.CollidesWith(player))
+                {
+                    _gameOver = true;
+                }
+            }
+            if (_gameOver)
+            {
+                Reset();
+            }
+            for (int i = bullets.Children.Count - 1; i >= 0; i--)
+            {
+                Bullet b = bullets.Children[i] as Bullet;
+                for (int x = mushrooms.Children.Count - 1; x >= 0; x--)
+                {
+                    Mushroom m = mushrooms.Children[x] as Mushroom;
+                    if (b.CollidesWith(m))
                     {
                         score.Add(scoreMushroomHit);
-                        //mushrooms.Remove(mushroom);
-                        //bullets.Remove(bullet);
+                        mushrooms.Remove(m);
+                        bullets.Remove(b);
                     }
                 }
             }
@@ -101,6 +107,15 @@ namespace Centipede.Content.GameStates
                 bullets.Add(new Bullet(new Vector2(player.Position.X, player.Position.Y - spacingBulletPlayer)));
             }
             base.HandleInput(inputHelper);
+        }
+
+        public override void Reset()
+        {
+            base.Reset();
+            bullets.Children.Clear();
+            snake.Children.Clear();
+            mushrooms.Children.Clear();
+            GameEnvironment.GameStateManager.SwitchTo("gameOverState");
         }
     }
 }
