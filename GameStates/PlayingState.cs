@@ -117,6 +117,8 @@ namespace Centipede.Content.GameStates
         public override void Reset()
         {
             base.Reset();
+            player.Reset();
+            score.Reset();
             bullets.Children.Clear();
             snake.Children.Clear();
             mushrooms.Children.Clear();
