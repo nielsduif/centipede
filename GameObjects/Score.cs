@@ -23,5 +23,10 @@ namespace Centipede.GameObjects
         {
             score += _amount;
         }
+
+        public override void Reset()
+        {
+            score = 0;
+        }
     }
 }

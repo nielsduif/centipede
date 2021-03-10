@@ -31,13 +31,20 @@ namespace Centipede.Content.GameStates
             Add(bullets);
             snake = new GameObjectList();
             Add(snake);
+            mushrooms = new GameObjectList();
+            Add(mushrooms);
+            score = new Score();
+            Add(score);
+            Init();
+        }
+
+        void Init()
+        {
             for (int i = 0; i < snakeSegments - 1; i++)
             {
                 snake.Add(new SnakeSegment("spr_snakebody", new Vector2(i * snakeSpacing, 0)));
             }
             snake.Add(new SnakeSegment("spr_snakehead", new Vector2(snakeSpacing * snakeSegments - snakeSpacing, 0)));
-            mushrooms = new GameObjectList();
-            Add(mushrooms);
             for (int i = 0; i < mushroomAmount; i++)
             {
                 Random r = new Random();
@@ -45,8 +52,6 @@ namespace Centipede.Content.GameStates
                 int y = r.Next(randomMushroom[2], randomMushroom[3]);
                 mushrooms.Add(new Mushroom(new Vector2(x, y)));
             }
-            score = new Score();
-            Add(score);
         }
 
         public override void Update(GameTime gameTime)
@@ -115,6 +120,7 @@ namespace Centipede.Content.GameStates
             bullets.Children.Clear();
             snake.Children.Clear();
             mushrooms.Children.Clear();
+            Init();
             GameEnvironment.GameStateManager.SwitchTo("gameOverState");
         }
     }
