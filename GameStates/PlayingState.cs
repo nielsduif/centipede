@@ -71,21 +71,14 @@ namespace Centipede.Content.GameStates
                         snake.Remove(s);
                     }
                 }
-                foreach(Mushroom m in mushrooms.Children)
-                {
-                    if (s.CollidesWith(m))
-                    {
-                        s.Bounce(m.Position.X - s.Position.X);
-                    }
-                }
-                /*for (int x = mushrooms.Children.Count - 1; x >= 0; x--)
+                for (int x = mushrooms.Children.Count - 1; x >= 0; x--)
                 {
                     Mushroom m = mushrooms.Children[x] as Mushroom;
                     if (s.CollidesWith(m))
                     {
                         s.Bounce(m.Position.X - s.Position.X);
                     }
-                }*/
+                }
                 if (s.CollidesWith(player))
                 {
                     _gameOver = true;
