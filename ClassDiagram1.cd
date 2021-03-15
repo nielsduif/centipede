@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AnimatedGameObject">
+    <Position X="6.5" Y="11.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAACAAAAAAAAgEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\AnimatedGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Animation">
+    <Position X="2.25" Y="17.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAAAAAAAAIAAAAAQAAAAEACAAgAAAIAAAACA=</HashCode>
+      <FileName>GameManagement\Animation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AssetManager">
+    <Position X="31" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAEAAAAAAAAAkAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>GameManagement\AssetManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Collision">
+    <Position X="32.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\Collision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawingHelper">
+    <Position X="34.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\DrawingHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameEnvironment">
+    <Position X="7.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>BJQAAECQAAAAAgIABIAAIAQAAAAAJAwAAAQAAAAAAAQ=</HashCode>
+      <FileName>GameManagement\GameEnvironment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObject">
+    <Position X="15.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQCAACAAACABiBgAAABYAAAACAAAAAMAAQADAAEAgA=</HashCode>
+      <FileName>GameManagement\GameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameObjectGrid">
+    <Position X="3.5" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAYAAACAAAIABkBAAAAAIAAAACAAAAEAAAAAwAgAAEA=</HashCode>
+      <FileName>GameManagement\GameObjectGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObjectList">
+    <Position X="23.75" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAYAAACAAAAABgQAAAAEBAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\GameObjectList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameSettingsManager">
+    <Position X="31" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\GameSettingsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStateManager" BaseTypeListCollapsed="true">
+    <Position X="32.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAQAAABgAAAAQAAAIUAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\GameStateManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InputHelper">
+    <Position X="34.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASIAAAgAAAAAAAAAAIAAUBCAAAAAAAAAAAAQABSgAA=</HashCode>
+      <FileName>GameManagement\InputHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteGameObject">
+    <Position X="12.75" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAABAAAAgAAAAAABEQAgDAAAAAQAAAAAAgIAAA=</HashCode>
+      <FileName>GameManagement\SpriteGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteSheet">
+    <Position X="2.25" Y="12.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAAEAABAAAAgEAAACAAEAAgBAABAAQAAQAAAAIAEE=</HashCode>
+      <FileName>GameManagement\SpriteSheet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextGameObject">
+    <Position X="28" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAggAAACAAAAAAAAAAAACIAAAAiAAAAAA=</HashCode>
+      <FileName>GameManagement\TextGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FlappyBird.RotatingSpriteGameObject">
+    <Position X="17.25" Y="11.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAAAAAgAAAgAAAEAAAAAAAAASAEQAAAAAAAI=</HashCode>
+      <FileName>GameManagement\RotatingSpriteGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centipede.GameObjects.Bullet">
+    <Position X="20.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>GameObjects\Bullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centipede.GameObjects.Mushroom">
+    <Position X="10.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Mushroom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centipede.GameObjects.Player">
+    <Position X="12.5" Y="11.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centipede.GameObjects.Score">
+    <Position X="28.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAABAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Score.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centipede.GameObjects.SnakeSegment">
+    <Position X="15" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>GameObjects\SnakeSegment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centipede.GameStates.GameOverState">
+    <Position X="22.5" Y="11" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\GameOverState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centipede.Content.GameStates.PlayingState">
+    <Position X="25" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAYQBBAAAAAAIQACAAAAAAAABCAACAAAiCAA=</HashCode>
+      <FileName>GameStates\PlayingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centipede.Centipede">
+    <Position X="8" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Centipede.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centipede.Program">
+    <Position X="31" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IGameLoopObject">
+    <Position X="31" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\IGameLoopObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

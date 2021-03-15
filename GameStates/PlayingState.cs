@@ -18,7 +18,7 @@ namespace Centipede.Content.GameStates
         int snakeSpacing = 32;
         GameObjectList mushrooms;
         int[] randomMushroom = { 20, 450, 25, 450 };
-        int mushroomAmount = 20;
+        int mushroomAmount = 3;
         Score score;
         int scoreSnakeHit = 10, scoreMushroomHit = 1;
 
@@ -71,14 +71,21 @@ namespace Centipede.Content.GameStates
                         snake.Remove(s);
                     }
                 }
-                for (int x = mushrooms.Children.Count - 1; x >= 0; x--)
+                foreach(Mushroom m in mushrooms.Children)
+                {
+                    if (s.CollidesWith(m))
+                    {
+                        s.Bounce(m.Position.X - s.Position.X);
+                    }
+                }
+                /*for (int x = mushrooms.Children.Count - 1; x >= 0; x--)
                 {
                     Mushroom m = mushrooms.Children[x] as Mushroom;
                     if (s.CollidesWith(m))
                     {
-                        s.Bounce();
+                        s.Bounce(m.Position.X - s.Position.X);
                     }
-                }
+                }*/
                 if (s.CollidesWith(player))
                 {
                     _gameOver = true;

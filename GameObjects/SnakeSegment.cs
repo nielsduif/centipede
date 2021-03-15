@@ -18,16 +18,22 @@ namespace Centipede.GameObjects
 
         public override void Update(GameTime gameTime)
         {
-            if (position.X < 0 - sprite.Width || position.X > GameEnvironment.Screen.X)
+            if (position.X < 0 - sprite.Width)
             {
-                Bounce();
+                Bounce(sprite.Width + position.X);
             }
-            position.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            else if (position.X > GameEnvironment.Screen.X)
+            {
+                Bounce(GameEnvironment.Screen.X - position.X);
+            }
+            base.Update(gameTime);
         }
 
-        public void Bounce()
+        public void Bounce(float _offset)
         {
+            Debug.WriteLine(_offset);
             position.Y += shiftAmount;
+            position.X += _offset;
             velocity.X *= -1;
         }
     }
