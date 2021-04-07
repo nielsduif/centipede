@@ -25,6 +25,8 @@ namespace Centipede
             // TODO: use this.Content to load your game content here
             gameStateManager.AddGameState("playingState", new PlayingState());
             gameStateManager.SwitchTo("playingState");
+            /* gameStateManager.AddGameState("gameObjectGridState", new GameObjectGridState());
+             gameStateManager.SwitchTo("gameObjectGridState");*/
             gameStateManager.AddGameState("gameOverState", new GameOverState());
         }
     }
